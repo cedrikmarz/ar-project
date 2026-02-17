@@ -4,18 +4,23 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>AR Restaurant Demo</title>
+
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
     <style>
-      body { font-family: system-ui, sans-serif; padding: 24px; }
-      .card { padding: 16px; border: 1px solid #ddd; border-radius: 12px; max-width: 520px; }
-      a { color: inherit; }
+      body { margin: 0; font-family: system-ui, sans-serif; }
+      model-viewer { width: 100vw; height: 100vh; background: #fff; }
     </style>
   </head>
+
   <body>
-    <div class="card">
-      <h1>AR Restaurant Demo</h1>
-      <p>✅ GitHub Pages läuft.</p>
-      <p>Nächster Schritt: 3D-Modell einbinden.</p>
-    </div>
+    <model-viewer
+      src="models/pizza.glb"
+      camera-controls
+      auto-rotate
+      ar
+      ar-modes="webxr scene-viewer quick-look"
+      shadow-intensity="1">
+    </model-viewer>
   </body>
 </html>
-
