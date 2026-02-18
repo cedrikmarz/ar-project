@@ -3,50 +3,156 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>AR Restaurant Demo</title>
-
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-
+    <title>Restaurant Menü (AR)</title>
     <style>
-      body {
-  margin: 0;
-  font-family: system-ui, sans-serif;
-  background: #f4f4f4;
-}
-
-.container {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 20px;
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-}
-
-model-viewer {
-  width: 100%;
-  height: 500px;
-  border-radius: 12px;
-  background: #fafafa;
-}
-
+      :root{
+        --bg:#f4f4f4;
+        --card:#ffffff;
+        --text:#111;
+        --muted:#666;
+        --border:#e6e6e6;
+        --shadow: 0 10px 30px rgba(0,0,0,0.08);
+        --radius: 18px;
+      }
+      body{
+        margin:0;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        background:var(--bg);
+        color:var(--text);
+      }
+      header{
+        padding: 28px 18px 10px;
+      }
+      .wrap{
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 0 18px 40px;
+      }
+      .brand{
+        display:flex;
+        align-items:baseline;
+        gap:10px;
+      }
+      h1{
+        margin:0;
+        font-size: 28px;
+        letter-spacing: -0.02em;
+      }
+      .badge{
+        font-size: 12px;
+        padding: 4px 10px;
+        border:1px solid var(--border);
+        border-radius: 999px;
+        background:#fff;
+        color:var(--muted);
+      }
+      .sub{
+        margin: 10px 0 0;
+        color: var(--muted);
+        line-height: 1.4;
+      }
+      .grid{
+        margin-top: 18px;
+        display:grid;
+        grid-template-columns: repeat( auto-fit, minmax(220px, 1fr) );
+        gap: 14px;
+      }
+      a.card{
+        text-decoration:none;
+        color:inherit;
+        background:var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 16px;
+        display:flex;
+        flex-direction:column;
+        gap:10px;
+        transition: transform .08s ease, box-shadow .08s ease;
+      }
+      a.card:hover{
+        transform: translateY(-2px);
+        box-shadow: 0 14px 38px rgba(0,0,0,0.10);
+      }
+      .icon{
+        width:44px;height:44px;
+        border-radius: 14px;
+        border:1px solid var(--border);
+        display:grid;
+        place-items:center;
+        font-size: 22px;
+        background:#fafafa;
+      }
+      .title{
+        font-weight: 700;
+        font-size: 16px;
+        margin:0;
+      }
+      .desc{
+        margin:0;
+        color:var(--muted);
+        font-size: 13px;
+        line-height: 1.35;
+      }
+      .footer{
+        margin-top: 22px;
+        color: var(--muted);
+        font-size: 12px;
+      }
+      .hint{
+        display:inline-block;
+        margin-top: 6px;
+        padding: 10px 12px;
+        border:1px dashed var(--border);
+        border-radius: 14px;
+        background:#fff;
+      }
     </style>
   </head>
 
   <body>
-    <div class="container">
-  <h1>Burger Deluxe</h1>
-  <p>Interaktive 3D-Vorschau mit AR-Funktion</p>
+    <header class="wrap">
+      <div class="brand">
+        <h1>Digitale Speisekarte</h1>
+        <span class="badge">3D • AR</span>
+      </div>
+      <p class="sub">
+        Wähle eine Kategorie. Tippe anschließend ein Gericht an, um es in 3D zu sehen und (optional) in AR auf dem Tisch zu platzieren.
+      </p>
+    </header>
 
-  <model-viewer
-    src="models/burger.glb"
-    camera-controls
-    auto-rotate
-    ar
-    ar-modes="webxr scene-viewer quick-look"
-    shadow-intensity="1">
-  </model-viewer>
-</div>
+    <main class="wrap">
+      <div class="grid">
+        <a class="card" href="menu/vorspeisen.html">
+          <div class="icon">🥗</div>
+          <p class="title">Vorspeisen</p>
+          <p class="desc">Leichte Starter & kleine Gerichte</p>
+        </a>
 
+        <a class="card" href="menu/hauptspeisen.html">
+          <div class="icon">🍽️</div>
+          <p class="title">Hauptspeisen</p>
+          <p class="desc">Fleisch, Fisch & vegetarisch</p>
+        </a>
+
+        <a class="card" href="menu/nachspeisen.html">
+          <div class="icon">🍰</div>
+          <p class="title">Nachspeisen</p>
+          <p class="desc">Süßes zum Abschluss</p>
+        </a>
+
+        <a class="card" href="menu/getraenke.html">
+          <div class="icon">🥤</div>
+          <p class="title">Getränke</p>
+          <p class="desc">Softdrinks, Kaffee & mehr</p>
+        </a>
+      </div>
+
+      <div class="footer">
+        <div class="hint">
+          💡 Tipp: Später kann das Restaurant Kategorien/Bezeichnungen frei anpassen (z.B. „Fleisch / Fisch / Vegetarisch“).
+        </div>
+      </div>
+    </main>
   </body>
 </html>
