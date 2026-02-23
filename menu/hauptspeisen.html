@@ -1,93 +1,92 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hauptspeisen</title>
+
     <style>
-      :root{
-        --bg:#f4f4f4; --card:#fff; --text:#111; --muted:#666;
-        --border:#e6e6e6; --shadow: 0 10px 30px rgba(0,0,0,0.08);
-        --radius: 18px;
-      }
-      body{ margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background:var(--bg); color:var(--text); }
-      .wrap{ max-width: 960px; margin: 0 auto; padding: 22px 18px 40px; }
-      .top{ display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap; }
-      .back{
-        text-decoration:none; color:inherit; font-size:14px;
-        padding:10px 12px; border:1px solid var(--border); border-radius: 999px; background:#fff;
-      }
-      h1{ margin:10px 0 6px; font-size: 26px; letter-spacing:-0.02em; }
-      p.sub{ margin:0; color:var(--muted); }
-      .grid{ margin-top: 18px; display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
-      a.card{
-        text-decoration:none; color:inherit;
-        background:var(--card); border:1px solid var(--border); border-radius:var(--radius);
-        box-shadow:var(--shadow); overflow:hidden;
-        transition: transform .08s ease, box-shadow .08s ease;
-      }
-      a.card:hover{ transform: translateY(-2px); box-shadow: 0 14px 38px rgba(0,0,0,0.10); }
-      .img{
-        height: 120px; background: linear-gradient(135deg, #fff, #f0f0f0);
-        display:flex; align-items:flex-end; padding:12px;
-      }
-      .tag{
-        font-size:12px; padding:4px 10px; border-radius:999px; border:1px solid var(--border); background:#fff; color:var(--muted);
-      }
-      .content{ padding: 14px 14px 16px; }
-      .title{ margin:0; font-weight:700; font-size:16px; }
-      .desc{ margin:6px 0 0; color:var(--muted); font-size:13px; line-height:1.35; }
-      .meta{ margin-top:10px; display:flex; gap:8px; flex-wrap:wrap; }
-      .pill{ font-size:12px; padding:4px 10px; border-radius:999px; background:#fafafa; border:1px solid var(--border); color:var(--muted); }
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+            background: #f4f4f4;
+            color: #111;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+
+        .back {
+            display: inline-block;
+            margin-bottom: 20px;
+            text-decoration: none;
+            color: #111;
+            font-size: 14px;
+            padding: 8px 14px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            background: #fff;
+        }
+
+        h1 {
+            margin-top: 0;
+        }
+
+        .card {
+            display: block;
+            text-decoration: none;
+            background: white;
+            border-radius: 14px;
+            padding: 20px;
+            margin-top: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            color: inherit;
+            transition: transform 0.1s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+        }
+
+        .card-title {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .card-desc {
+            font-size: 14px;
+            color: #666;
+            margin-top: 6px;
+        }
     </style>
-  </head>
+</head>
 
-  <body>
-    <div class="wrap">
-      <div class="top">
-        <a class="back" href="../index.html">← Kategorien</a>
-      </div>
+<body>
+    <div class="container">
 
-      <h1>Hauptspeisen</h1>
-      <p class="sub">Tippe ein Gericht an, um es in 3D zu sehen und in AR zu platzieren.</p>
+        <a class="back" href="../index.html">← Zurück zu Kategorien</a>
 
-      <div class="grid">
-        <!-- Burger -->
+        <h1>Hauptspeisen</h1>
+        <p>Wähle ein Gericht aus, um es in 3D und AR anzusehen.</p>
+
         <a class="card" href="../dish/burger.html">
-          <div class="img"><span class="tag">3D • AR</span></div>
-          <div class="content">
-            <p class="title">Burger Deluxe</p>
-            <p class="desc">Saftig, frisch belegt – Vorschau in 3D/AR.</p>
-            <div class="meta">
-              <span class="pill">Beliebt</span>
-              <span class="pill">ca. 8–12 min</span>
-            </div>
-          </div>
-        </a>
-
-        <!-- Platzhalter -->
-        <a class="card" href="#">
-          <div class="img"><span class="tag">coming soon</span></div>
-          <div class="content">
-            <p class="title">Pasta (Demo)</p>
-            <p class="desc">Hier kommt später ein weiteres Gericht rein.</p>
-            <div class="meta">
-              <span class="pill">Demo</span>
-            </div>
-          </div>
+            <div class="card-title">Burger Deluxe</div>
+            <div class="card-desc">Saftig belegt – 3D & AR Vorschau</div>
         </a>
 
         <a class="card" href="#">
-          <div class="img"><span class="tag">coming soon</span></div>
-          <div class="content">
-            <p class="title">Veggie Bowl (Demo)</p>
-            <p class="desc">Platzhalter für vegetarische Hauptspeisen.</p>
-            <div class="meta">
-              <span class="pill">Demo</span>
-            </div>
-          </div>
+            <div class="card-title">Pasta (Demo)</div>
+            <div class="card-desc">Kommt bald</div>
         </a>
-      </div>
+
+        <a class="card" href="#">
+            <div class="card-title">Veggie Bowl (Demo)</div>
+            <div class="card-desc">Kommt bald</div>
+        </a>
+
     </div>
-  </body>
+</body>
 </html>
