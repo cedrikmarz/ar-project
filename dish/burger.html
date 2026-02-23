@@ -1,1 +1,98 @@
-<!DOCTYPE html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Burger – 3D & AR</title><script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script><style>body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#f4f4f4;color:#111}.c{max-width:900px;margin:0 auto;padding:24px 18px}.back{display:inline-block;margin:0 0 14px;text-decoration:none;color:#111;font-size:14px;padding:8px 14px;border:1px solid #ddd;border-radius:999px;background:#fff}h1{margin:0 0 10px}model-viewer{width:100%;height:520px;background:#fff;border-radius:18px;box-shadow:0 10px 25px rgba(0,0,0,.08)}.p{margin:12px 0 0;color:#666}</style></head><body><div class="c"><a class="back" href="../menu/hauptspeisen.html">← Zurück</a><h1>Burger Deluxe</h1><model-viewer src="../models/burger.glb" alt="Burger 3D" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look"></model-viewer><p class="p">Falls das Modell nicht erscheint: öffne die URL direkt: <span style="font-family:ui-monospace,Consolas,monospace">/models/burger.glb</span></p></div></body></html>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Burger Deluxe – 3D & AR</title>
+
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+  <style>
+    :root{
+      --bg:#f4f4f4; --card:#fff; --text:#111; --muted:#666;
+      --border:#e6e6e6; --shadow: 0 10px 30px rgba(0,0,0,0.08);
+      --radius: 18px;
+    }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+    }
+    .wrap{ max-width: 960px; margin: 0 auto; padding: 22px 18px 40px; }
+    .top{ display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap; }
+    .back{
+      text-decoration:none; color:inherit; font-size:14px;
+      padding:10px 12px; border:1px solid var(--border); border-radius: 999px; background:#fff;
+    }
+    h1{ margin:12px 0 6px; font-size: 26px; letter-spacing:-0.02em; }
+    p.sub{ margin:0 0 16px; color:var(--muted); }
+
+    .viewer{
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) + 6px);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    model-viewer{
+      width: 100%;
+      height: 520px;
+      background: #fff;
+      display:block;
+    }
+
+    .panel{
+      padding: 14px 16px 16px;
+      border-top: 1px solid var(--border);
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .pill{
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
+      background:#fafafa;
+      border:1px solid var(--border);
+      color:var(--muted);
+    }
+    .hint{ color:var(--muted); font-size: 13px; margin: 14px 2px 0; }
+    .mono{ font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="top">
+      <a class="back" href="../menu/hauptspeisen.html">← Hauptspeisen</a>
+    </div>
+
+    <h1>Burger Deluxe</h1>
+    <p class="sub">Drehen/Zoomen mit dem Finger. Tippe auf AR, um den Burger auf dem Tisch zu platzieren.</p>
+
+    <div class="viewer">
+      <model-viewer
+        src="../models/burger.glb"
+        alt="3D Modell eines Burgers"
+        camera-controls
+        auto-rotate
+        ar
+        ar-modes="webxr scene-viewer quick-look"
+        shadow-intensity="1">
+      </model-viewer>
+
+      <div class="panel">
+        <span class="pill">3D • AR</span>
+        <span class="pill">Model: <span class="mono">models/burger.glb</span></span>
+      </div>
+    </div>
+
+    <p class="hint">
+      Wenn es mal nicht lädt: prüfe kurz, ob <span class="mono">/models/burger.glb</span> direkt erreichbar ist.
+    </p>
+  </div>
+</body>
+</html>
